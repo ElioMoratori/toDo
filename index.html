@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/styles.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <main class="main-content">
+        <section id="info">
+            <h1>Minhas Tarefas</h1>
+            <p>Escreva suas tarefas no formulário abaixo e salve em um novo card</p>
+        </section>
+
+        <section id="inner-task">
+            <input type="text" name="task-name" id="task-name" placeholder="O que você precisa fazer?" maxlength="100">
+            <input type="button" value="Inserir" id="button" onclick="insereTarefa()">
+        </section>
+
+        <section id="task-list">
+            <h2>To-do List</h2>
+            <p id="task-to-do" class="task" onclick="concluiTarefa()">Lavar o Carro</p>
+        </section>
+
+        <footer>
+            <p>Criado por Elio Moratori</p>
+        </footer>
+
+    </main>
+
+    <script src="./src/js/app.js"></script>
+
+</body>
+</html>
