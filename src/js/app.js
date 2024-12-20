@@ -5,7 +5,6 @@ function insereTarefa() {
     if (novaTarefa.value == "") {
         alert("Insira sua tarefa");
     } else {
-        console.log(novaTarefa.value);
         criarHtml(novaTarefa.value);
         novaTarefa.value = ""; 
            
@@ -24,7 +23,6 @@ function criarHtml(novaTarefa) {
     novaTarefaDiv.appendChild(novaTarefaTexto);
     novaTarefaTexto.setAttribute("id", id);
     novaTarefaTexto.setAttribute("onclick", "concluiTarefa(" + id + ")");
-    console.log(id);
     id++;
 }
 
