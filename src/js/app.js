@@ -1,3 +1,5 @@
+let id = 0;
+
 function insereTarefa() {
     let novaTarefa = document.getElementById("task-name");
     if (novaTarefa.value == "") {
@@ -10,18 +12,24 @@ function insereTarefa() {
     }
 }
 
+
+
 function criarHtml(novaTarefa) {
     let divisoria = document.getElementById("task-list");
+    let novaTarefaDiv = document.createElement("div");
+    divisoria.appendChild(novaTarefaDiv);
     let novaTarefaTexto = document.createElement("p");
-    novaTarefaTexto.addEventListener("click", concluiTarefa());
     novaTarefaTexto.classList.add("task");
     novaTarefaTexto.textContent = novaTarefa;
-    divisoria.appendChild(novaTarefaTexto);
-    
+    novaTarefaDiv.appendChild(novaTarefaTexto);
+    novaTarefaTexto.setAttribute("id", id);
+    novaTarefaTexto.setAttribute("onclick", "concluiTarefa(" + id + ")");
+    console.log(id);
+    id++;
 }
 
-function concluiTarefa() {
-    let checkbox = document.querySelector(".task");
+function concluiTarefa(id) {
+    let checkbox = document.getElementById(id);
     if (checkbox.classList.contains("disabled")) {
         checkbox.classList.remove("disabled");        
     } else {
